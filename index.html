@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.5/angular.min.js" integrity="sha512-WFxqED7cVQgOb3wqm/ssivKYPBWxDNWXLsFxaLngePR18qt/PkE5HYA3tgPgoENndwQCbUeCgRo8k8rpgEyPeQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body ng-app="form" ng-controller="formController">
+    
+    <form>
+
+        <h1>Website services</h1>
+        <ul>
+            <li ng-repeat="item in items" ng-click="toggleActive(item)" ng-class="{active:item.active}">
+                {{item.name}}<span>{{item.price | currency}}</span>
+            </li>
+        </ul>
+
+        <div class="total">
+            Total: <span>{{total() | currency}}</span>
+        </div>
+
+    </form>
+
+</body>
+</html>
